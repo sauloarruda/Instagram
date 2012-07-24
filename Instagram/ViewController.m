@@ -7,28 +7,76 @@
 //
 
 #import "ViewController.h"
+#import "Photo.h"
+#import "PhotoCell.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) NSArray* photosArray;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
+@synthesize photosArray;
+
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self loadPhotos];
 }
 
-- (void)viewDidUnload
+- (void)loadPhotos
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    [[Timeline sharedInstance] allPhotosWithDelegate:self];    
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+#pragma mark - TimelineLoadDelegate methods
+
+- (void)timelineLoadFailWithError:(NSError *)error
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    [[[UIAlertView alloc] initWithTitle:@"Ocorreu um erro" message:@"Não foi possível carregar sua timeline" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Repetir", nil] show];
+}
+
+- (void)timelineDidFinishLoad:(NSArray *)photos
+{
+    NSLog(@"Loaded photos: %@", photos);
+    self.photosArray = photos;
+    [self.tableView reloadData];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+        [self loadPhotos];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [self.photosArray count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    Photo* photo = [self.photosArray objectAtIndex:section];
+    return photo.longDescription;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString* cellIdentifier = @"photoCell"; 
+    PhotoCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    Photo* photo = [self.photosArray objectAtIndex:indexPath.section];
+    [cell configureWithPhoto:photo];
+    return cell;
 }
 
 @end

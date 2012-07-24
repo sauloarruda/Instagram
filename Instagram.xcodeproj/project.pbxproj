@@ -15,6 +15,9 @@
 		9F8B143D15BE1D55000ED0B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B143C15BE1D55000ED0B2 /* AppDelegate.m */; };
 		9F8B144015BE1D55000ED0B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B143E15BE1D55000ED0B2 /* MainStoryboard.storyboard */; };
 		9F8B144315BE1D55000ED0B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B144215BE1D55000ED0B2 /* ViewController.m */; };
+		9F8B144B15BE1EBA000ED0B2 /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B144A15BE1EBA000ED0B2 /* Timeline.m */; };
+		9F8B145115BE2DF3000ED0B2 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B145015BE2DF3000ED0B2 /* Photo.m */; };
+		9F8B145515BE2E11000ED0B2 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B145415BE2E11000ED0B2 /* PhotoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +25,22 @@
 		9F8B142C15BE1D55000ED0B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9F8B142E15BE1D55000ED0B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9F8B143015BE1D55000ED0B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9F8B143415BE1D55000ED0B2 /* Instagram-Info.plist */ = {isa = PBXFileReference; path = "Instagram-Info.plist"; sourceTree = "<group>"; };
+		9F8B143415BE1D55000ED0B2 /* Instagram-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Instagram-Info.plist"; sourceTree = "<group>"; };
 		9F8B143615BE1D55000ED0B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F8B143815BE1D55000ED0B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9F8B143A15BE1D55000ED0B2 /* Instagram-Prefix.pch */ = {isa = PBXFileReference; path = "Instagram-Prefix.pch"; sourceTree = "<group>"; };
-		9F8B143B15BE1D55000ED0B2 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F8B143A15BE1D55000ED0B2 /* Instagram-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instagram-Prefix.pch"; sourceTree = "<group>"; };
+		9F8B143B15BE1D55000ED0B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9F8B143C15BE1D55000ED0B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9F8B143F15BE1D55000ED0B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9F8B144115BE1D55000ED0B2 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		9F8B144115BE1D55000ED0B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9F8B144215BE1D55000ED0B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9F8B144915BE1EBA000ED0B2 /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
+		9F8B144A15BE1EBA000ED0B2 /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
+		9F8B144E15BE2129000ED0B2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		9F8B144F15BE2DF3000ED0B2 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		9F8B145015BE2DF3000ED0B2 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		9F8B145315BE2E11000ED0B2 /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		9F8B145415BE2E11000ED0B2 /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +90,11 @@
 				9F8B143B15BE1D55000ED0B2 /* AppDelegate.h */,
 				9F8B143C15BE1D55000ED0B2 /* AppDelegate.m */,
 				9F8B143E15BE1D55000ED0B2 /* MainStoryboard.storyboard */,
-				9F8B144115BE1D55000ED0B2 /* ViewController.h */,
-				9F8B144215BE1D55000ED0B2 /* ViewController.m */,
+				9F8B144C15BE1EBE000ED0B2 /* Models */,
+				9F8B145215BE2DF7000ED0B2 /* View */,
+				9F8B144D15BE1EC8000ED0B2 /* Controllers */,
 				9F8B143315BE1D55000ED0B2 /* Supporting Files */,
+				9F8B144E15BE2129000ED0B2 /* Constants.h */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -96,6 +108,35 @@
 				9F8B143A15BE1D55000ED0B2 /* Instagram-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F8B144C15BE1EBE000ED0B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B144915BE1EBA000ED0B2 /* Timeline.h */,
+				9F8B144A15BE1EBA000ED0B2 /* Timeline.m */,
+				9F8B144F15BE2DF3000ED0B2 /* Photo.h */,
+				9F8B145015BE2DF3000ED0B2 /* Photo.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9F8B144D15BE1EC8000ED0B2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B144115BE1D55000ED0B2 /* ViewController.h */,
+				9F8B144215BE1D55000ED0B2 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9F8B145215BE2DF7000ED0B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B145315BE2E11000ED0B2 /* PhotoCell.h */,
+				9F8B145415BE2E11000ED0B2 /* PhotoCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +205,9 @@
 				9F8B143915BE1D55000ED0B2 /* main.m in Sources */,
 				9F8B143D15BE1D55000ED0B2 /* AppDelegate.m in Sources */,
 				9F8B144315BE1D55000ED0B2 /* ViewController.m in Sources */,
+				9F8B144B15BE1EBA000ED0B2 /* Timeline.m in Sources */,
+				9F8B145115BE2DF3000ED0B2 /* Photo.m in Sources */,
+				9F8B145515BE2E11000ED0B2 /* PhotoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
