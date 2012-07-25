@@ -9,18 +9,22 @@
 #import "Photo.h"
 #import "Constants.h"
 
-@interface Photo ()
+@interface Photo () {
+    float _expectedContentLength;
+}
 
 @property (nonatomic, weak) id<PhotoDownloadDelegate> delegate;
 @property (nonatomic, strong) NSMutableData* receivedData;
+@property (nonatomic, strong) NSURLConnection* connection;
 @property (nonatomic, strong) UIImage* photoImage;
 
 @end
 
-@implementation Photo
+@implementation Photo 
 
 @synthesize longDescription, url, createdAt;
 @synthesize delegate = _delegate;
+@synthesize connection = _connection;
 @synthesize receivedData = _receivedData;
 @synthesize photoImage = _photoImage;
 
@@ -39,13 +43,15 @@
 
 - (void)downloadWithDelegate:(id<PhotoDownloadDelegate>)delegate
 {
+    self.delegate = nil;
+    [self.connection cancel];
     if (self.photoImage) 
         [delegate photoDownloadDidFinish:self.photoImage];
     else {
         NSURL* nsurl = [NSURL URLWithString:self.url];
         NSURLRequest* request = [NSURLRequest requestWithURL:nsurl];
-        NSURLConnection* connection = [NSURLConnection connectionWithRequest:request delegate:self];
-        if (connection) {
+        self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
+        if (self.connection) {
             self.delegate = delegate;
             self.receivedData = [[NSMutableData alloc] init];
         }
@@ -62,9 +68,24 @@
 
 #pragma mark - NSURLConnectionDataDelegate
 
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    if (httpResponse.statusCode == 200) {
+        _expectedContentLength = [response expectedContentLength];
+        NSLog(@"Receiving image %@ with %f bytes", self.longDescription, _expectedContentLength);
+    } else {
+        [self.delegate photoDownloadFailWithError:[NSError errorWithDomain:@"" code:httpResponse.statusCode userInfo:nil]];
+        self.delegate = nil;
+    }
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     [self.receivedData appendData:data];
+    float progress = [self.receivedData length]/_expectedContentLength;
+    NSLog(@"Received %d bytes. Progress: %f, Photo: %@", [data length], progress, self.longDescription);
+    [self.delegate photoDownloadDidProgress:progress];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection

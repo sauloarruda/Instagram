@@ -12,13 +12,18 @@
 
 @interface ViewController ()
 
+- (IBAction)refreshButtonTapped:(id)sender;
 @property (nonatomic, strong) NSArray* photosArray;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
 
 @end
 
 @implementation ViewController
 
 @synthesize photosArray;
+@synthesize refreshButton;
+@synthesize loadingView;
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -27,14 +32,25 @@
 
 - (void)loadPhotos
 {
+    [self.refreshButton setEnabled:NO];
+    [self.loadingView setHidden:NO];
     [[Timeline sharedInstance] allPhotosWithDelegate:self];    
 }
+
+#pragma mark - Actions
+
+- (IBAction)refreshButtonTapped:(id)sender {
+    [self loadPhotos];
+}
+
 
 #pragma mark - TimelineLoadDelegate methods
 
 - (void)timelineLoadFailWithError:(NSError *)error
 {
     [[[UIAlertView alloc] initWithTitle:@"Ocorreu um erro" message:@"Não foi possível carregar sua timeline" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Repetir", nil] show];
+    [self.refreshButton setEnabled:YES];
+    [self.loadingView setHidden:YES];
 }
 
 - (void)timelineDidFinishLoad:(NSArray *)photos
@@ -42,6 +58,8 @@
     NSLog(@"Loaded photos: %@", photos);
     self.photosArray = photos;
     [self.tableView reloadData];
+    [self.refreshButton setEnabled:YES];
+    [self.loadingView setHidden:YES];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -79,4 +97,9 @@
     return cell;
 }
 
+- (void)viewDidUnload {
+    [self setRefreshButton:nil];
+    [self setLoadingView:nil];
+    [super viewDidUnload];
+}
 @end

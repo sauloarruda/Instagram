@@ -12,6 +12,7 @@
 
 - (void)photoDownloadFailWithError:(NSError*)error;
 - (void)photoDownloadDidFinish:(UIImage*)image;
+- (void)photoDownloadDidProgress:(float)progress;
 
 @end
 
