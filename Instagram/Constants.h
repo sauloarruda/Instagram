@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Jera. All rights reserved.
 //
 
-#define API_ROOT @"http://192.168.20.136/~sauloarruda/api/v1"
+#define API_ROOT @"http://192.168.0.111:3000"
 //#define API_ROOT @"https://raw.github.com/sauloarruda/Instagram/master"
 
-#define TIMELINE_URL_FORMAT @"%@/timeline.json"
-#define UPLOAD_URL_FORMAT @"%@/upload.json"
+#define TIMELINE_URL_FORMAT @"%@/api/v1/timeline.json"
+#define UPLOAD_URL_FORMAT @"%@/api/v1/upload.json"

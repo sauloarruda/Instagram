@@ -33,7 +33,10 @@
     NSMutableArray* photosArray = [[NSMutableArray alloc] initWithCapacity:[photosJson count]];
     for (NSDictionary* photoJson in photosJson) {
         Photo* photo = [[Photo alloc] init];
-        photo.url = [photoJson objectForKey:@"url"];
+        if (![((NSString*)[photoJson objectForKey:@"url"])hasPrefix:@"http://"])
+            photo.url = [API_ROOT stringByAppendingString:[photoJson objectForKey:@"url"]];
+        else
+            photo.url = [photoJson objectForKey:@"url"];
         photo.longDescription = [photoJson objectForKey:@"description"];
         photo.createdAt = [photoJson objectForKey:@"created_at"];
         [photosArray addObject:photo];
