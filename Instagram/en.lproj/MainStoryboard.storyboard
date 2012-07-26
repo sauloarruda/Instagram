@@ -64,7 +64,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="319"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" id="MI0-5o-hRF">
+                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="MI0-5o-hRF">
                                             <rect key="frame" x="10" y="10" width="300" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -103,6 +103,24 @@
             <point key="canvasLocation" x="-103" y="46"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="PhotoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="errorLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="photoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="photoProgressBar" candidateClass="UIProgressView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshButtonTapped:"/>
+                <relationship kind="outlet" name="loadingView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

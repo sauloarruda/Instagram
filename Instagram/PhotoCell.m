@@ -23,7 +23,7 @@
 - (void)configureWithPhoto:(Photo*)photo
 {
     [self.photoProgressBar setProgress:0];
-    [self.photoImageView setHidden:YES];
+    [self.photoImageView setAlpha:0];
     [self.photoProgressBar setHidden:NO];
     [self.errorLabel setHidden:YES];
     [photo downloadWithDelegate:self];
@@ -35,7 +35,10 @@
 {
     [self.photoProgressBar setHidden:YES];
     self.photoImageView.image = image;
-    [self.photoImageView setHidden:NO];
+
+    [UIView animateWithDuration:0.5 animations:^(){
+        [self.photoImageView setAlpha:1];        
+    }];
 }
 
 - (void)photoDownloadFailWithError:(NSError *)error
