@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Jtv-I6-N1S" kind="relationship" relationship="rootViewController" id="zfY-nm-oXU"/>
+                        <segue destination="Jtv-I6-N1S" kind="relationship" relationship="rootViewController" id="Tdk-xH-jvl"/>
                     </connections>
                 </navigationController>
             </objects>
@@ -49,55 +49,49 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="bLP-ZN-Gg9">
-                                <rect key="frame" x="0.0" y="108" width="320" height="259"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="275"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" id="lUZ-mB-EE6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" id="MwK-8q-Xyy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" id="MwK-8q-Xyy">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="9"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </progressView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="fQl-tV-1OB">
-                                        <rect key="frame" x="20" y="38" width="280" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Descrição da imagem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="BMr-TM-FYT">
-                                        <rect key="frame" x="20" y="13" width="280" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </view>
+                            </progressView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Descrição da imagem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="BMr-TM-FYT">
+                                <rect key="frame" x="20" y="17" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Fhb-VQ-PV2">
+                                <rect key="frame" x="20" y="41" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nova foto" id="mMD-Xr-yfZ">
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="iA1-RR-0yc">
                             <connections>
-                                <action selector="cameraButtonTapped:" destination="Jtv-I6-N1S" id="WYa-oh-ANA"/>
+                                <action selector="cameraButtonTapped:" destination="Jtv-I6-N1S" id="VKO-I4-MIg"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="cxX-dw-fod">
                             <connections>
-                                <action selector="doneButtonTapped:" destination="Jtv-I6-N1S" id="Lis-1X-gi4"/>
+                                <action selector="doneButtonTapped:" destination="Jtv-I6-N1S" id="PkA-IT-tYc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="progressView" destination="MwK-8q-Xyy" id="FYC-Co-mkL"/>
-                        <outlet property="uploadImage" destination="bLP-ZN-Gg9" id="wug-9y-MJP"/>
+                        <outlet property="descriptionTextField" destination="Fhb-VQ-PV2" id="Sfq-vZ-T8e"/>
+                        <outlet property="progressView" destination="MwK-8q-Xyy" id="wrS-xe-Tjq"/>
+                        <outlet property="uploadImage" destination="bLP-ZN-Gg9" id="5hP-DZ-mE3"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-191" y="-53"/>
+            <point key="canvasLocation" x="121" y="175"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6G1-R5-5gQ">

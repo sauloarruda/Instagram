@@ -28,7 +28,7 @@
 - (void)showCameraView
 {
     UIImagePickerController* destination = [[UIImagePickerController alloc] init];
-    destination.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    destination.sourceType = UIImagePickerControllerSourceTypeCamera;
     destination.delegate = self;
     [self presentModalViewController:destination animated:NO];
 }
@@ -49,17 +49,20 @@
     NSString *myboundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
     NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",myboundary];
     [urlRequest addValue:contentType forHTTPHeaderField: @"Content-Type"];
-
     
-    //[urlRequest addValue: [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundry] forHTTPHeaderField:@"Content-Type"];
+    NSMutableData *postData = [NSMutableData data];    
     
-    NSMutableData *postData = [NSMutableData data]; //[NSMutableData dataWithCapacity:[data length] + 512];
+    [postData appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", myboundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postData appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"photo[description]\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postData appendData:[self.descriptionTextField.text dataUsingEncoding:NSUTF8StringEncoding]];
+    [postData appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",myboundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // Arquivo da foto
     [postData appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", myboundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [postData appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"photo[file]\"; filename=\"%@\"\r\n", @"upload.jpg"]dataUsingEncoding:NSUTF8StringEncoding]];
     [postData appendData:[[NSString stringWithString:@"Content-Type: image/jpeg\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postData appendData:[NSData dataWithData:UIImageJPEGRepresentation(image, 90)]];
     [postData appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", myboundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postData appendData:[[NSString stringWithFormat:@"&photo[description]=%@", self.descriptionTextField.text] dataUsingEncoding:NSUTF8StringEncoding]];
 
     [urlRequest setHTTPBody:postData];
     
