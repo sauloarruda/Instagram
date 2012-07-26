@@ -6,24 +6,26 @@
 //  Copyright (c) 2012 Jera. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HomeViewController.h"
 #import "Photo.h"
 #import "PhotoCell.h"
 
-@interface ViewController ()
+@interface HomeViewController ()
 
 - (IBAction)refreshButtonTapped:(id)sender;
 @property (nonatomic, strong) NSArray* photosArray;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
+@property (weak, nonatomic) IBOutlet UIView *instagramView;
 
 @end
 
-@implementation ViewController
+@implementation HomeViewController
 
 @synthesize photosArray;
 @synthesize refreshButton;
 @synthesize loadingView;
+@synthesize instagramView;
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -34,6 +36,7 @@
 {
     [self.refreshButton setEnabled:NO];
     [self.loadingView setHidden:NO];
+    [self.instagramView setHidden:YES];
     [[Timeline sharedInstance] allPhotosWithDelegate:self];    
 }
 
@@ -51,6 +54,7 @@
     [[[UIAlertView alloc] initWithTitle:@"Ocorreu um erro" message:@"Não foi possível carregar sua timeline" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Repetir", nil] show];
     [self.refreshButton setEnabled:YES];
     [self.loadingView setHidden:YES];
+    [self.instagramView setHidden:NO];
 }
 
 - (void)timelineDidFinishLoad:(NSArray *)photos
@@ -60,6 +64,7 @@
     [self.tableView reloadData];
     [self.refreshButton setEnabled:YES];
     [self.loadingView setHidden:YES];
+    [self.instagramView setHidden:NO];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -100,6 +105,7 @@
 - (void)viewDidUnload {
     [self setRefreshButton:nil];
     [self setLoadingView:nil];
+    [self setInstagramView:nil];
     [super viewDidUnload];
 }
 @end

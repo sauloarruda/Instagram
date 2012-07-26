@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Timeline.h"
 
-@interface ViewController : UITableViewController<UIAlertViewDelegate, TimelineLoadDelegate>
+@interface HomeViewController : UITableViewController<UIAlertViewDelegate, TimelineLoadDelegate>
 
 @end

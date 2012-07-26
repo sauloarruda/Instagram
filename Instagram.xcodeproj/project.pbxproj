@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F85E32515C08D2200FB4771 /* 001-Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F85E32415C08D2200FB4771 /* 001-Home@2x.png */; };
+		9F85E32815C08D5400FB4771 /* 001-Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F85E32715C08D5400FB4771 /* 001-Home.png */; };
+		9F85E32A15C08DA800FB4771 /* 119-Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F85E32915C08DA800FB4771 /* 119-Camera.png */; };
+		9F85E32C15C08DB800FB4771 /* 119-Camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F85E32B15C08DB800FB4771 /* 119-Camera@2x.png */; };
+		9F85E32F15C0916B00FB4771 /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F85E32E15C0916B00FB4771 /* UploadViewController.m */; };
 		9F8B142D15BE1D55000ED0B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8B142C15BE1D55000ED0B2 /* UIKit.framework */; };
 		9F8B142F15BE1D55000ED0B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8B142E15BE1D55000ED0B2 /* Foundation.framework */; };
 		9F8B143115BE1D55000ED0B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8B143015BE1D55000ED0B2 /* CoreGraphics.framework */; };
@@ -14,13 +19,19 @@
 		9F8B143915BE1D55000ED0B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B143815BE1D55000ED0B2 /* main.m */; };
 		9F8B143D15BE1D55000ED0B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B143C15BE1D55000ED0B2 /* AppDelegate.m */; };
 		9F8B144015BE1D55000ED0B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B143E15BE1D55000ED0B2 /* MainStoryboard.storyboard */; };
-		9F8B144315BE1D55000ED0B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B144215BE1D55000ED0B2 /* ViewController.m */; };
+		9F8B144315BE1D55000ED0B2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B144215BE1D55000ED0B2 /* HomeViewController.m */; };
 		9F8B144B15BE1EBA000ED0B2 /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B144A15BE1EBA000ED0B2 /* Timeline.m */; };
 		9F8B145115BE2DF3000ED0B2 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B145015BE2DF3000ED0B2 /* Photo.m */; };
 		9F8B145515BE2E11000ED0B2 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B145415BE2E11000ED0B2 /* PhotoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F85E32415C08D2200FB4771 /* 001-Home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "001-Home@2x.png"; sourceTree = "<group>"; };
+		9F85E32715C08D5400FB4771 /* 001-Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "001-Home.png"; sourceTree = "<group>"; };
+		9F85E32915C08DA800FB4771 /* 119-Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "119-Camera.png"; sourceTree = "<group>"; };
+		9F85E32B15C08DB800FB4771 /* 119-Camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "119-Camera@2x.png"; sourceTree = "<group>"; };
+		9F85E32D15C0916B00FB4771 /* UploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadViewController.h; sourceTree = "<group>"; };
+		9F85E32E15C0916B00FB4771 /* UploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadViewController.m; sourceTree = "<group>"; };
 		9F8B142815BE1D55000ED0B2 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8B142C15BE1D55000ED0B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9F8B142E15BE1D55000ED0B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,8 +43,8 @@
 		9F8B143B15BE1D55000ED0B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9F8B143C15BE1D55000ED0B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9F8B143F15BE1D55000ED0B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9F8B144115BE1D55000ED0B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9F8B144215BE1D55000ED0B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9F8B144115BE1D55000ED0B2 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		9F8B144215BE1D55000ED0B2 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		9F8B144915BE1EBA000ED0B2 /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
 		9F8B144A15BE1EBA000ED0B2 /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
 		9F8B144E15BE2129000ED0B2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -57,6 +68,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F85E32615C08D2A00FB4771 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F85E32B15C08DB800FB4771 /* 119-Camera@2x.png */,
+				9F85E32915C08DA800FB4771 /* 119-Camera.png */,
+				9F85E32715C08D5400FB4771 /* 001-Home.png */,
+				9F85E32415C08D2200FB4771 /* 001-Home@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		9F8B141D15BE1D55000ED0B2 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +115,7 @@
 				9F8B144C15BE1EBE000ED0B2 /* Models */,
 				9F8B145215BE2DF7000ED0B2 /* View */,
 				9F8B144D15BE1EC8000ED0B2 /* Controllers */,
+				9F85E32615C08D2A00FB4771 /* Resources */,
 				9F8B143315BE1D55000ED0B2 /* Supporting Files */,
 				9F8B144E15BE2129000ED0B2 /* Constants.h */,
 			);
@@ -124,8 +147,10 @@
 		9F8B144D15BE1EC8000ED0B2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9F8B144115BE1D55000ED0B2 /* ViewController.h */,
-				9F8B144215BE1D55000ED0B2 /* ViewController.m */,
+				9F8B144115BE1D55000ED0B2 /* HomeViewController.h */,
+				9F8B144215BE1D55000ED0B2 /* HomeViewController.m */,
+				9F85E32D15C0916B00FB4771 /* UploadViewController.h */,
+				9F85E32E15C0916B00FB4771 /* UploadViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +217,10 @@
 			files = (
 				9F8B143715BE1D55000ED0B2 /* InfoPlist.strings in Resources */,
 				9F8B144015BE1D55000ED0B2 /* MainStoryboard.storyboard in Resources */,
+				9F85E32515C08D2200FB4771 /* 001-Home@2x.png in Resources */,
+				9F85E32815C08D5400FB4771 /* 001-Home.png in Resources */,
+				9F85E32A15C08DA800FB4771 /* 119-Camera.png in Resources */,
+				9F85E32C15C08DB800FB4771 /* 119-Camera@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,10 +233,11 @@
 			files = (
 				9F8B143915BE1D55000ED0B2 /* main.m in Sources */,
 				9F8B143D15BE1D55000ED0B2 /* AppDelegate.m in Sources */,
-				9F8B144315BE1D55000ED0B2 /* ViewController.m in Sources */,
+				9F8B144315BE1D55000ED0B2 /* HomeViewController.m in Sources */,
 				9F8B144B15BE1EBA000ED0B2 /* Timeline.m in Sources */,
 				9F8B145115BE2DF3000ED0B2 /* Photo.m in Sources */,
 				9F8B145515BE2E11000ED0B2 /* PhotoCell.m in Sources */,
+				9F85E32F15C0916B00FB4771 /* UploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

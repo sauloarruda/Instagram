@@ -1,3 +1,4 @@
+
 //
 //  Timeline.m
 //  Instagram
@@ -60,6 +61,7 @@ static Timeline* sharedInstance;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSError* error;
+    NSLog(@"Received: %@", [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding]);
     NSArray* photosJson = [NSJSONSerialization JSONObjectWithData:self.receivedData options:NSJSONReadingAllowFragments error:&error];
     if (error) {
         NSLog(@"Error reading timeline json: %@", error);
